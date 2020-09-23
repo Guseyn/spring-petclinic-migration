@@ -185,6 +185,16 @@
       </plugin>
 
       <plugin>
+          <groupId>org.openrewrite.maven</groupId>
+          <artifactId>rewrite-maven-plugin</artifactId>
+          <version>1.2.1</version>
+          <configuration>
+              <activeProfiles>spring,mockito,junit</activeProfiles>
+              <configLocation>rewrite.yml</configLocation>
+          </configuration>
+      </plugin>
+
+      <plugin>
         <groupId>ro.isdc.wro4j</groupId>
         <artifactId>wro4j-maven-plugin</artifactId>
         <version>${wro4j.version}</version>

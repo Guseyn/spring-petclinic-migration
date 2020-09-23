@@ -1,22 +1,15 @@
 package org.springframework.samples.petclinic;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
 
-import org.springframework.beans.factory.annotation.Value;
-
+@ConfigurationProperties("app")
 public class PetClinicConfiguration {
-    @Value("${app.mail.tech-support-contact}")
     private String techSupportContact;
-    @Value("${app.mail.api-token}")
     private String apiToken;
-    @Value("${app.mail.oauth-secret}")
     private String oauthSecret;
-    @Value("${app.name}")
     private String name;
-    @Value("${app.port}")
     private String port;
-    @Value("${app.aws.accessKey}")
     private String accessKey;
-    @Value("${app.aws.secretKey}")
     private String secretKey;
 
     public String getTechSupportContact() {

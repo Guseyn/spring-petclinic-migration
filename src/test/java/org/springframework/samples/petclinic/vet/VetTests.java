@@ -16,14 +16,12 @@
 package org.springframework.samples.petclinic.vet;
 
 import org.junit.Test;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.util.SerializationUtils;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * @author Dave Syer
- *
- */
+@ConfigurationProperties("app")
 public class VetTests {
 
     @Test

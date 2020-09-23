@@ -1,22 +1,18 @@
 package org.springframework.samples.petclinic.model;
 
-import static org.junit.Assert.assertEquals;
-
-import java.util.Locale;
-import java.util.Set;
-
-import javax.validation.ConstraintViolation;
-import javax.validation.Validator;
-
 import org.junit.Test;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
-/**
- * @author Michael Isvy
- *         Simple test to make sure that Bean Validation is working
- *         (useful when upgrading to a new version of Hibernate Validator/ Bean Validation)
- */
+import javax.validation.ConstraintViolation;
+import javax.validation.Validator;
+import java.util.Locale;
+import java.util.Set;
+
+import static org.junit.Assert.assertEquals;
+
+@ConfigurationProperties("app")
 public class ValidatorTests {
 
     private Validator createValidator() {
