@@ -15,17 +15,14 @@
  */
 package org.springframework.samples.petclinic.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
-/**
- * Simple JavaBean domain object representing an person.
- *
- * @author Ken Krebs
- */
 @MappedSuperclass
+@ConfigurationProperties("app")
 public class Person extends BaseEntity {
 
     @Column(name = "first_name")

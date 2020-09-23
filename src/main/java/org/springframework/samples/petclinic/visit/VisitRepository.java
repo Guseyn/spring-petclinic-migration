@@ -15,21 +15,14 @@
  */
 package org.springframework.samples.petclinic.visit;
 
-import java.util.List;
-
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.repository.Repository;
 import org.springframework.samples.petclinic.model.BaseEntity;
 
-/**
- * Repository class for <code>Visit</code> domain objects All method names are compliant with Spring Data naming
- * conventions so this interface can easily be extended for Spring Data See here: http://static.springsource.org/spring-data/jpa/docs/current/reference/html/jpa.repositories.html#jpa.query-methods.query-creation
- *
- * @author Ken Krebs
- * @author Juergen Hoeller
- * @author Sam Brannen
- * @author Michael Isvy
- */
+import java.util.List;
+
+@ConfigurationProperties("app")
 public interface VisitRepository extends Repository<Visit, Integer> {
 
     /**

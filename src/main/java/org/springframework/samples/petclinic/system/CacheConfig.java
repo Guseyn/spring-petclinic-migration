@@ -1,23 +1,22 @@
 package org.springframework.samples.petclinic.system;
 
-import javax.cache.configuration.Configuration;
-import javax.cache.configuration.MutableConfiguration;
-
 import org.springframework.boot.autoconfigure.cache.JCacheManagerCustomizer;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
 
-/**
- * Cache could be disabled in unit test.
- */
+import javax.cache.configuration.Configuration;
+import javax.cache.configuration.MutableConfiguration;
+
 @org.springframework.context.annotation.Configuration
 @EnableCaching
 @Profile("production")
+@ConfigurationProperties("app")
 class CacheConfig {
 
     @Bean
-    public JCacheManagerCustomizer cacheManagerCustomizer() {
+    JCacheManagerCustomizer cacheManagerCustomizer() {
         return cm -> {
             Configuration<Object, Object> cacheConfiguration = createCacheConfiguration();
             cm.createCache("vets", cacheConfiguration);

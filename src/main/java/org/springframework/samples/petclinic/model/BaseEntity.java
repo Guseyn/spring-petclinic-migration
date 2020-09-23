@@ -15,21 +15,13 @@
  */
 package org.springframework.samples.petclinic.model;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
+import javax.persistence.*;
 import java.io.Serializable;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
-
-/**
- * Simple JavaBean domain object with an id property. Used as a base class for objects
- * needing this property.
- *
- * @author Ken Krebs
- * @author Juergen Hoeller
- */
 @MappedSuperclass
+@ConfigurationProperties("app")
 public class BaseEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -15,20 +15,16 @@
  */
 package org.springframework.samples.petclinic.vet;
 
-import java.io.Serializable;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.samples.petclinic.model.NamedEntity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
 
-import org.springframework.samples.petclinic.model.NamedEntity;
-
-/**
- * Models a {@link Vet Vet's} specialty (for example, dentistry).
- *
- * @author Juergen Hoeller
- */
 @Entity
 @Table(name = "specialties")
+@ConfigurationProperties("app")
 public class Specialty extends NamedEntity implements Serializable {
 
 }
